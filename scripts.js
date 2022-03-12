@@ -9,26 +9,6 @@ const Modal = {
     }
 }
 
-// const transactions = [
-//     {
-//         description: 'Luz',
-//         amount: -50054,
-//         date: '23/01/2021'
-//     },{
-//         description: 'Website',
-//         amount: 50015,
-//         date: '23/01/2021'
-//     },{
-//         description: 'Internet',
-//         amount: -20083,
-//         date: '23/01/2021'
-//     },{
-//         description: 'App',
-//         amount: 600073,
-//         date: '23/01/2021'
-//     }
-// ]
-
 const Storage = {
     get() {
         return JSON.parse(localStorage.getItem("dev_finances:transactions")) || []
@@ -138,7 +118,8 @@ const DOM = {
 
 const Utils = {
     formatAmount(amount) {
-        return Number(amount) * 100
+        amount = amount * 100
+        return Math.round(amount)
     },
 
     formatDate(date) {
